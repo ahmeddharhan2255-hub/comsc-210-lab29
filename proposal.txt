@@ -1,0 +1,11 @@
+Project Overview:
+My project takes the temperatures from three neighboring cities and presents their 
+highest temperatures, lowest temperatures, and average for that specific day for the month. 
+This software will be used to show trends in weather for that month in that area and 
+present what the user should do in response.
+
+Implementation:
+I will use std::map
+
+
+Simulated Events: 
