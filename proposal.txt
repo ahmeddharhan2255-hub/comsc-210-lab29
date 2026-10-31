@@ -1,7 +1,7 @@
 Project Overview:
 My project takes the temperatures from three neighboring cities and presents their 
 highest temperatures, lowest temperatures, and average for that specific day for the month. 
-This software will be used to show trends in weather for that month in that area and 
+This software will be used to show trends in weather for that month (and a few extra days) in that area and 
 present what the user should do in response.
 
 Implementation:
@@ -9,8 +9,8 @@ I will use std::map to store the temperatures from an external file. The map wil
 Each city contains three lists. These lists will store the highs, lows, and average temperatures across
 thirty days. 
 
-Since each city will have 3 lists with 30 inputs, that provides 90 temperatures for each
-city. The total temperatures stored will be 270. 
+Since each city will have 3 lists with 34 inputs, that provides 34 temperatures for high, low, and average for each
+city each day.
 
 Simulated Events: 
 The simulation will focus on the weather in three different cities in

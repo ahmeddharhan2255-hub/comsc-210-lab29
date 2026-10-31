@@ -1,0 +1,8 @@
+     |        City1       |    City2     |City3
+-----|--------------------|--------------|-------
+Day x| {high,avg,low}     |{high,avg,low}|{high,avg,low}
+Day y|{high,avg,low}      |{high,avg,low}|{high,avg,low}
+...  |{high,avg,low}      |{high,avg,low}|{high,avg,low}
+...  |{high,avg,low}      |{high,avg,low}| {high,avg,low}
+
+
