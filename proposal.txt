@@ -5,7 +5,15 @@ This software will be used to show trends in weather for that month in that area
 present what the user should do in response.
 
 Implementation:
-I will use std::map
+I will use std::map to store the temperatures from an external file. The map will contain a string for the value which will represent the city.
+Each city contains three lists. These lists will store the highs, lows, and average temperatures across
+thirty days. 
 
+Since each city will have 3 lists with 30 inputs, that provides 90 temperatures for each
+city. The total temperatures stored will be 270. 
 
 Simulated Events: 
+The simulation will focus on the weather in three different cities in
+the Bay Area which could be sunny or cold. Each time period represents one day.
+The lists will be updated daily, and the simulation will generate recommendations 
+for users. This includes what activities to do based on the weather.
