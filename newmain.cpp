@@ -15,7 +15,7 @@ using namespace std;
 void find_high_avg();
 void find_avg_avg();
 void find_low_avg();
-void check_weather();
+void check_weather(map<int, list<int>> city, int day);
 void display_all_data(map<int, list<int>> city);
 
 const int SIZE = 34;
@@ -24,6 +24,8 @@ const int TEMP_SIZE = 3;
 int main(){
 
     int choice = 0;
+    int day;
+    int city_choice;
     //Each map represents a city
     //Values represent a day
     //List represents that days high, lows, and avg
@@ -68,9 +70,25 @@ int main(){
 
         switch(choice){
             case 1:
-                display_all_data(city1);
-                break;
-            
+                cout << "What would you like to view" << endl;
+                cout << "1. Weather for a specific day" << endl;
+                cout << "2. All recorded temperatures in the past 34 days" << endl;
+                cin >> city_choice;
+
+                if (city_choice == 1){
+                    cout << "What Day(1-34)?" << endl;
+                    cin >> day;
+                    check_weather(city1, day);
+                    break; 
+                }
+                else if (city_choice == 2){
+                    display_all_data(city1);
+                    break;
+                }
+                else{
+                    break;
+                }
+
             case 2:
                 display_all_data(city2);
                 break;
@@ -114,7 +132,6 @@ void find_avg_avg(){
 
 }
 
-void check_weather(){
-
+void check_weather(map<int, list<int>> city, int day){
+    
 }
-   
