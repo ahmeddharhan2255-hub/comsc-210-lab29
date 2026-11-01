@@ -35,27 +35,59 @@ int main(){
         cout << "Data could not be retrieved" << endl;
     }
 
-    string input;
     int high,low,avg;
-    for(int i = 0; i < SIZE; i++){
+    for(int i = 1; i <= SIZE; i++){
         file >> high >> low >> avg;
         city1[i] = {high, low, avg};
     }
 
-    for(int i = 0; i < SIZE; i++){
+    for(int i = 1; i <= SIZE; i++){
         file >> high >> low >> avg;
         city2[i] = {high, low, avg};
     }
 
-    for(int i = 0; i < SIZE; i++){
+    for(int i = 1; i <= SIZE; i++){
         file >> high >> low >> avg;
         city3[i] = {high, low, avg};
     }
 
     file.close();
 
-    for(map<int,list<int>> it = city1.begin();
-    it != city1.end(); ++it)
+    for(map<int,list<int>>::iterator it = city1.begin();
+    it != city1.end(); ++it){
+
+        cout << "Day " << it->first << " [CITY 1]: ";
+
+        for(auto temp: it->second){
+            cout << temp << " ";
+        }
+        cout << endl;
+        cout << endl;
+    }
+
+    for(map<int,list<int>>::iterator it = city2.begin();
+    it != city2.end(); ++it){
+
+        cout << "Day " << it->first << " [CITY 2]: ";
+
+        for(auto temp: it->second){
+            cout << temp << " ";
+        }
+        cout << endl;
+        cout << endl;
+    }
+
+    for(map<int,list<int>>::iterator it = city3.begin();
+    it != city3.end(); ++it){
+
+        cout << "Day " << it->first << " [CITY 3]: ";
+
+        for(auto temp: it->second){
+            cout << temp << " ";
+        }
+        cout << endl;
+        cout << endl;
+    }
 
     return 0;
 }
