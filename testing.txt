@@ -1,0 +1,10 @@
+Unit Testing: Weather Program
+
+For my Unit Testing, I wanted to test two things:
+
+First, if the files were being read successfully into
+all three cities without error. I will test this by reading the data from
+the file into the map and outputting the size of each city, which should be 34
+each, adding up to the total number of lines in "weatherData.txt" which is 102.
+
+The second thing I watned to test

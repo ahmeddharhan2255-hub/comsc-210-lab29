@@ -6,7 +6,6 @@
 #include <string>
 #include <map>
 #include <list>
-#include <array>
 #include <iterator>
 
 using namespace std;
@@ -20,7 +19,6 @@ void display_all_data(map<int, list<int>> city);
 void recommendation(map<int, list<int>> city, int day);
 
 const int SIZE = 34;
-const int TEMP_SIZE = 3;
 
 int main(){
 
@@ -75,6 +73,7 @@ int main(){
                 cout << "What would you like to view" << endl;
                 cout << "1. Weather for a specific day" << endl;
                 cout << "2. All recorded temperatures in the past 34 days" << endl;
+                cout << "3. Average of all temp categories" << endl;
                 cin >> city_choice;
 
                 if (city_choice == 1){
@@ -88,6 +87,12 @@ int main(){
                     display_all_data(city1);
                     break;
                 }
+                else if(city_choice == 3){
+                    find_high_avg(city1);
+                    find_low_avg(city1);
+                    find_avg_avg(city1);
+                    break;
+                }
                 else{
                     break;
                 }
@@ -96,6 +101,7 @@ int main(){
                 cout << "What would you like to view" << endl;
                 cout << "1. Weather for a specific day" << endl;
                 cout << "2. All recorded temperatures in the past 34 days" << endl;
+                cout << "3. Average of all temp categories" << endl;
                 cin >> city_choice;
 
                 if (city_choice == 1){
@@ -109,6 +115,12 @@ int main(){
                     display_all_data(city2);
                     break;
                 }
+                else if(city_choice == 3){
+                    find_high_avg(city2);
+                    find_low_avg(city2);
+                    find_avg_avg(city2);
+                    break;
+                }
                 else{
                     break;
                 }
@@ -117,6 +129,7 @@ int main(){
                 cout << "What would you like to view" << endl;
                 cout << "1. Weather for a specific day" << endl;
                 cout << "2. All recorded temperatures in the past 34 days" << endl;
+                cout << "3. Average of all temp categories" << endl;
                 cin >> city_choice;
 
                 if (city_choice == 1){
@@ -128,6 +141,12 @@ int main(){
                 }
                 else if (city_choice == 2){
                     display_all_data(city3);
+                    break;
+                }
+                else if(city_choice == 3){
+                    find_high_avg(city3);
+                    find_low_avg(city3);
+                    find_avg_avg(city3);
                     break;
                 }
                 else{
@@ -167,16 +186,37 @@ void find_high_avg(map<int, list<int>> city){
         sum += it->second.front();
 
     }
-
+    cout << "High Average: ";
     cout << sum / SIZE << "°F " << endl;
 }
 
 void find_low_avg(map<int, list<int>> city){
 
+    double sum = 0;
+
+   for(map<int,list<int>>::iterator it = city.begin();
+    it != city.end(); ++it){
+
+        auto temp = it->second.begin();
+        sum += *next(temp);
+    }
+
+    cout << "Low Average: ";
+    cout << sum / SIZE << "°F " << endl;
 }
 
 void find_avg_avg(map<int, list<int>> city){
 
+    double sum = 0;
+
+   for(map<int,list<int>>::iterator it = city.begin();
+    it != city.end(); ++it){
+
+        auto temp = it->second.begin();
+        sum += *next(temp,2);
+    }
+    cout << "Average of Average Temps: ";
+    cout << sum / SIZE << "°F " << endl;
 }
 
 void check_weather(map<int, list<int>> city, int day){
