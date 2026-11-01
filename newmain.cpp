@@ -7,6 +7,7 @@
 #include <map>
 #include <list>
 #include <array>
+#include <iterator>
 
 using namespace std;
 
@@ -52,6 +53,9 @@ int main(){
     }
 
     file.close();
+
+    for(map<int,list<int>> it = city1.begin();
+    it != city1.end(); ++it)
 
     return 0;
 }
