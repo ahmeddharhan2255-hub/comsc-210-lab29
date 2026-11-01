@@ -12,9 +12,9 @@
 using namespace std;
 
 //Function Protoypes
-void find_high_avg();
-void find_avg_avg();
-void find_low_avg();
+void find_high_avg(map<int, list<int>> city);
+void find_avg_avg(map<int, list<int>> city);
+void find_low_avg(map<int, list<int>> city);
 void check_weather(map<int, list<int>> city, int day);
 void display_all_data(map<int, list<int>> city);
 
@@ -37,6 +37,7 @@ int main(){
 
     if(!file.is_open()){
         cout << "Data could not be retrieved" << endl;
+        return 1;
     }
 
     int high,low,avg;
@@ -90,12 +91,44 @@ int main(){
                 }
 
             case 2:
-                display_all_data(city2);
-                break;
+                cout << "What would you like to view" << endl;
+                cout << "1. Weather for a specific day" << endl;
+                cout << "2. All recorded temperatures in the past 34 days" << endl;
+                cin >> city_choice;
+
+                if (city_choice == 1){
+                    cout << "What Day(1-34)?" << endl;
+                    cin >> day;
+                    check_weather(city2, day);
+                    break; 
+                }
+                else if (city_choice == 2){
+                    display_all_data(city2);
+                    break;
+                }
+                else{
+                    break;
+                }
 
             case 3:
-                display_all_data(city3);
-                break;
+                cout << "What would you like to view" << endl;
+                cout << "1. Weather for a specific day" << endl;
+                cout << "2. All recorded temperatures in the past 34 days" << endl;
+                cin >> city_choice;
+
+                if (city_choice == 1){
+                    cout << "What Day(1-34)?" << endl;
+                    cin >> day;
+                    check_weather(city3, day);
+                    break; 
+                }
+                else if (city_choice == 2){
+                    display_all_data(city3);
+                    break;
+                }
+                else{
+                    break;
+                }
 
             case 4:
                 return 0;
@@ -113,25 +146,37 @@ void display_all_data(map<int, list<int>> city){
         cout << "Day " << it->first << ": ";
 
         for(auto temp: it->second){
-            cout << temp << " ";
+            cout << temp << "°F ";
         }
         cout << endl;
         cout << endl;
     }
 }
 
-void find_high_avg(){
+void find_high_avg(map<int, list<int>> city){
 
 }
 
-void find_low_avg(){
+void find_low_avg(map<int, list<int>> city){
 
 }
 
-void find_avg_avg(){
+void find_avg_avg(map<int, list<int>> city){
 
 }
 
 void check_weather(map<int, list<int>> city, int day){
-    
+
+    auto it = city.find(day);
+
+    if(it != city.end()){
+
+        for(auto temp: it->second){
+            cout << temp << "°F";
+        }
+    }
+
+    else{
+        cout << "Invalid Day!" << endl;
+    }
 }
