@@ -17,6 +17,7 @@ void find_avg_avg(map<int, list<int>> city);
 void find_low_avg(map<int, list<int>> city);
 void check_weather(map<int, list<int>> city, int day);
 void display_all_data(map<int, list<int>> city);
+void recommendation(map<int, list<int>> city, int day);
 
 const int SIZE = 34;
 const int TEMP_SIZE = 3;
@@ -179,4 +180,28 @@ void check_weather(map<int, list<int>> city, int day){
     else{
         cout << "Invalid Day!" << endl;
     }
+}
+
+void recommendation(map<int, list<int>> city, int day){
+
+    auto it = city.find(day);
+
+    if (it == city.end()){
+        cout << "Invalid day!" << endl;
+        return;
+    }
+
+    int high = it->second.front();
+
+    if (high < 70){
+        cout << "It seems to be a litle cold. Recommend wearing a ";
+        cout << "jacket or staying inside!" << endl;
+    }
+    else if (high > 70){
+        cout << "Seems to be on the hotter side. Good day to go out!" << endl;
+    }
+    else if (high == 70){
+        cout << "Great weather! Have a blast!" << endl;
+    }
+
 }
