@@ -21,7 +21,6 @@ the average
 #include <map>
 #include <list>
 #include <iterator>
-#include <cmath>
 
 using namespace std;
 const int SIZE = 34;
