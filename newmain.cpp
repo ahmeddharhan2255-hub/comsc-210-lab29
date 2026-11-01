@@ -22,6 +22,7 @@ const int TEMP_SIZE = 3;
 
 int main(){
 
+    int choice = 0;
     //Each map represents a city
     //Values represent a day
     //List represents that days high, lows, and avg
@@ -52,6 +53,35 @@ int main(){
     }
 
     file.close();
+
+    while(choice != 4){
+        cout << "*****************" << endl;
+        cout << "Weather Simulator" << endl;
+        cout << "*****************" << endl;
+        
+        cout << "1. City1" << endl;
+        cout << "2. City2" << endl;
+        cout << "3. City3" << endl;
+        cout << "4. Exit" << endl;
+        cin >> choice;
+
+        switch(choice){
+            case 1:
+
+                break;
+            
+            case 2:
+
+                break;
+
+            case 3:
+
+                break;
+
+            case 4:
+                return 0;
+        }
+    }
 
     for(map<int,list<int>>::iterator it = city1.begin();
     it != city1.end(); ++it){
