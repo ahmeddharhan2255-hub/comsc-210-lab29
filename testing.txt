@@ -7,7 +7,11 @@ all three cities without error. I will test this by reading the data from
 the file into the map and outputting the size of each city, which should be 34
 each, adding up to the total number of lines in "weatherData.txt" which is 102.
 
-********************************************************************************
+The second thing I want to test is if my averaging function is correct,
+specifically my high average function. I will give my function three dummy 
+temperatures and see if it can accurately find the high position, and calculate
+the average
+
 //COMSC-210 | LAB 30 | AHMAD DHARHAN
 
 //Header definitions
@@ -17,9 +21,13 @@ each, adding up to the total number of lines in "weatherData.txt" which is 102.
 #include <map>
 #include <list>
 #include <iterator>
+#include <cmath>
 
 using namespace std;
 const int SIZE = 34;
+
+//Function Prototype
+double find_high_avg(map<int, list<int>> city);
 
 int main(){
 
@@ -69,10 +77,34 @@ int main(){
         cout << "Conditions failed! Different sizes" << endl;
     }
 
-***********************************************************************
+    double sum = 80+90+70;
+    double avg = sum/3;
+
+    map<int, list<int>> testCity;
+
+    testCity[1] = {80, 60, 70};
+    testCity[2] = {90, 70, 80};
+    testCity[3] = {70, 50, 60};
+
+    double results = find_high_avg(testCity);
+
+    if (abs(avg - results) < 0.001){
+        cout << "Correct!" << endl;
+    }
+    else{
+        cout << "Incorrect!" << endl;
+    }
+
+    return 0;
+}
 
 
-The second thing I want to test is if my averaging function is correct,
-specifically my high average function. I will give my function three dummy 
-temperatures and see if it can accurately find the high position, and calculate
-the average
+double find_high_avg(map<int, list<int>> city) {
+    double sum = 0;
+
+    for (auto it = city.begin(); it != city.end(); ++it) {
+        sum += it->second.front();
+    }
+
+    return sum / city.size();
+}
