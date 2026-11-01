@@ -81,6 +81,7 @@ int main(){
                     cout << "What Day(1-34)?" << endl;
                     cin >> day;
                     check_weather(city1, day);
+                    recommendation(city1, day);
                     break; 
                 }
                 else if (city_choice == 2){
@@ -101,6 +102,7 @@ int main(){
                     cout << "What Day(1-34)?" << endl;
                     cin >> day;
                     check_weather(city2, day);
+                    recommendation(city2, day);
                     break; 
                 }
                 else if (city_choice == 2){
@@ -121,6 +123,7 @@ int main(){
                     cout << "What Day(1-34)?" << endl;
                     cin >> day;
                     check_weather(city3, day);
+                    recommendation(city3, day);
                     break; 
                 }
                 else if (city_choice == 2){
@@ -156,6 +159,16 @@ void display_all_data(map<int, list<int>> city){
 
 void find_high_avg(map<int, list<int>> city){
 
+    double sum = 0;
+
+   for(map<int,list<int>>::iterator it = city.begin();
+    it != city.end(); ++it){
+
+        sum += it->second.front();
+
+    }
+
+    cout << sum / SIZE << "°F " << endl;
 }
 
 void find_low_avg(map<int, list<int>> city){
@@ -198,7 +211,7 @@ void recommendation(map<int, list<int>> city, int day){
         cout << "jacket or staying inside!" << endl;
     }
     else if (high > 70){
-        cout << "Seems to be on the hotter side. Good day to go out!" << endl;
+        cout << "Seems to be on the hotter side. Good day to go out with sunscreen!" << endl;
     }
     else if (high == 70){
         cout << "Great weather! Have a blast!" << endl;
