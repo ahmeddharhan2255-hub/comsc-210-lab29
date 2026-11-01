@@ -107,3 +107,4 @@ void find_avg_avg(){
 void check_weather(){
 
 }
+   
