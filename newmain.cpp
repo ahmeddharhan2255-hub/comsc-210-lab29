@@ -35,8 +35,12 @@ int main(){
     string input;
     int high,low,avg;
     while(getline(file,input)){
-        
+    
     }
+
+    file.close();
+
+
 
 
 
