@@ -16,7 +16,7 @@ void find_high_avg();
 void find_avg_avg();
 void find_low_avg();
 void check_weather();
-void display_city(map<int, list<int>> city);
+void display_all_data(map<int, list<int>> city);
 
 const int SIZE = 34;
 const int TEMP_SIZE = 3;
@@ -68,62 +68,26 @@ int main(){
 
         switch(choice){
             case 1:
-
+                display_all_data(city1);
                 break;
             
             case 2:
-
+                display_all_data(city2);
                 break;
 
             case 3:
-
+                display_all_data(city3);
                 break;
 
             case 4:
                 return 0;
         }
     }
-
-    for(map<int,list<int>>::iterator it = city1.begin();
-    it != city1.end(); ++it){
-
-        cout << "Day " << it->first << " [CITY 1]: ";
-
-        for(auto temp: it->second){
-            cout << temp << " ";
-        }
-        cout << endl;
-        cout << endl;
-    }
-
-    for(map<int,list<int>>::iterator it = city2.begin();
-    it != city2.end(); ++it){
-
-        cout << "Day " << it->first << " [CITY 2]: ";
-
-        for(auto temp: it->second){
-            cout << temp << " ";
-        }
-        cout << endl;
-        cout << endl;
-    }
-
-    for(map<int,list<int>>::iterator it = city3.begin();
-    it != city3.end(); ++it){
-
-        cout << "Day " << it->first << " [CITY 3]: ";
-
-        for(auto temp: it->second){
-            cout << temp << " ";
-        }
-        cout << endl;
-        cout << endl;
-    }
-
+    
     return 0;
 }
 
-void display_city(map<int, list<int>> city){
+void display_all_data(map<int, list<int>> city){
 
    for(map<int,list<int>>::iterator it = city.begin();
     it != city.end(); ++it){
