@@ -1,0 +1,109 @@
+Unit Testing: Weather Program
+
+For my Unit Testing, I wanted to test two things:
+
+First, if the files were being read successfully into
+all three cities without error. I will test this by reading the data from
+the file into the map and outputting the size of each city, which should be 34
+each, adding up to the total number of lines in "weatherData.txt" which is 102.
+
+The second thing I want to test is if my averaging function is correct,
+specifically my high average function. I will give my function three dummy 
+temperatures and see if it can accurately find the high position, and calculate
+the average
+
+//COMSC-210 | LAB 30 | AHMAD DHARHAN
+
+//Header definitions
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+#include <list>
+#include <iterator>
+
+using namespace std;
+const int SIZE = 34;
+
+//Function Prototype
+double find_high_avg(map<int, list<int>> city);
+
+int main(){
+
+    int choice = 0;
+    int day;
+    int city_choice;
+    //Each map represents a city
+    //Values represent a day
+    //List represents that days high, lows, and avg
+    map<int, list<int>> city1;
+    map<int, list<int>> city2;
+    map<int, list<int>> city3;
+
+    ifstream file("weatherData.txt");
+
+    if(!file.is_open()){
+        cout << "Data could not be retrieved" << endl;
+        return 1;
+    }
+
+    int high,low,avg;
+    for(int i = 1; i <= SIZE; i++){
+        file >> high >> low >> avg;
+        city1[i] = {high, low, avg};
+    }
+
+    for(int i = 1; i <= SIZE; i++){
+        file >> high >> low >> avg;
+        city2[i] = {high, low, avg};
+    }
+
+    for(int i = 1; i <= SIZE; i++){
+        file >> high >> low >> avg;
+        city3[i] = {high, low, avg};
+    }
+
+    file.close();
+
+    cout << "City 1: " << city1.size() << " Days of Temps" << endl;
+    cout << "City 2: " << city2.size() << " Days of Temps" << endl;
+    cout << "City 3: " << city3.size() << " Days of Temps" << endl;
+
+    if (city1.size() == SIZE && city2.size() == SIZE && city3.size() == SIZE){
+        cout << "All conditions passed" << endl;
+    }
+    else{
+        cout << "Conditions failed! Different sizes" << endl;
+    }
+
+    double sum = 80+90+70;
+    double avg = sum/3;
+
+    map<int, list<int>> testCity;
+
+    testCity[1] = {80, 60, 70};
+    testCity[2] = {90, 70, 80};
+    testCity[3] = {70, 50, 60};
+
+    double results = find_high_avg(testCity);
+
+    if (abs(avg - results) < 0.001){
+        cout << "Correct!" << endl;
+    }
+    else{
+        cout << "Incorrect!" << endl;
+    }
+
+    return 0;
+}
+
+
+double find_high_avg(map<int, list<int>> city) {
+    double sum = 0;
+
+    for (auto it = city.begin(); it != city.end(); ++it) {
+        sum += it->second.front();
+    }
+
+    return sum / city.size();
+}
