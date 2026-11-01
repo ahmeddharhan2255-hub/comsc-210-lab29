@@ -34,15 +34,35 @@ int main(){
 
     string input;
     int high,low,avg;
-    while(getline(file,input)){
-    
+    for(int i = 0; i < SIZE; i++){
+        file >> high >> low >> avg;
+        city1[i] = {high, low, avg};
+    }
+
+    for(int i = 0; i < SIZE; i++){
+        file >> high >> low >> avg;
+        city2[i] = {high, low, avg};
+    }
+
+    for(int i = 0; i < SIZE; i++){
+        file >> high >> low >> avg;
+        city3[i] = {high, low, avg};
     }
 
     file.close();
 
 
-
-
-
     return 0;
+}
+
+void find_high_avg(){
+
+}
+
+void find_low_avg(){
+
+}
+
+void find_avg_avg(){
+    
 }
