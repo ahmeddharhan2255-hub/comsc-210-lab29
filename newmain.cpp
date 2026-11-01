@@ -14,8 +14,10 @@ using namespace std;
 void find_high_avg();
 void find_avg_avg();
 void find_low_avg();
+void check_weather();
 
 const int SIZE = 34;
+const int TEMP_SIZE = 3;
 
 int main(){
 
@@ -51,7 +53,6 @@ int main(){
 
     file.close();
 
-
     return 0;
 }
 
@@ -64,5 +65,9 @@ void find_low_avg(){
 }
 
 void find_avg_avg(){
-    
+
+}
+
+void check_weather(){
+
 }
