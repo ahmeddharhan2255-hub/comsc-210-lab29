@@ -200,7 +200,7 @@ void find_high_avg(map<int, list<int>> city){
 
     }
     cout << "High Average: ";
-    cout << sum / SIZE << "°F " << endl;
+    cout << sum / SIZE << " degrees F " << endl;
 }
 
 void find_low_avg(map<int, list<int>> city){
@@ -215,7 +215,7 @@ void find_low_avg(map<int, list<int>> city){
     }
 
     cout << "Low Average: ";
-    cout << sum / SIZE << "°F " << endl;
+    cout << sum / SIZE << " degrees F " << endl;
 }
 
 void find_avg_avg(map<int, list<int>> city){
@@ -229,7 +229,7 @@ void find_avg_avg(map<int, list<int>> city){
         sum += *next(temp,2);
     }
     cout << "Average of Average Temps: ";
-    cout << sum / SIZE << "°F " << endl;
+    cout << sum / SIZE << "degrees F " << endl;
 }
 
 void check_weather(map<int, list<int>> city, int day){

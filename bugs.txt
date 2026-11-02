@@ -8,5 +8,7 @@ charcters were inputted.
 3. Ran into the same issue as #2 when viewing the options for the selected city. Used the same
 solution for all three cities.
 
-
+4. When trying to display the temperatures using the "°F" symbol, it caused this weird error
+to appear (┬░F). Deleted the degrees symbol and just wrote out degrees. Did this for all
+displays
 
