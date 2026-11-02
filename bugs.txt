@@ -17,4 +17,13 @@ Invalid Day will be displayed twice. Removed it from one of the functions since 
 twice.
 
 6. Similar to issues 2 and 3, if the user inputs a character when trying to access a specific day,
-the program outputs the code an infinite number of times. 
+the program outputs the code an infinite number of times. Added an if statement to check the day input
+(if below 1 or above 34) which rules out characters included
+
+7. Ended up getting rid of the "degrees F" and just keeping "F". Was difficult to read.
+
+8.
+
+9.
+
+10.
