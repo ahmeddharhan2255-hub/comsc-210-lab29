@@ -17,6 +17,7 @@ void find_low_avg(map<int, list<int>> city);
 void check_weather(map<int, list<int>> city, int day);
 void display_all_data(map<int, list<int>> city);
 void recommendation(map<int, list<int>> city, int day);
+void menu(map<int, list<int>> city);
 
 const int SIZE = 34;
 
@@ -68,6 +69,22 @@ int main(){
         cout << "4. Exit" << endl;
         cin >> choice;
         cout << endl;
+
+        if (choice == 1){
+            menu(city1);
+        }
+        else if(choice == 2){
+            menu(city2);
+        }
+        else if(choice == 3){
+            menu(city3);
+        }
+        else{
+            cout << "Your input was Invalid! Enter numbers shown on menu!" << endl;
+            cin.clear();
+            cin.ignore(10000,'\n');
+            break;
+        }
 
         switch(choice){
             case 1:
@@ -179,6 +196,10 @@ int main(){
     }
     
     return 0;
+}
+
+void menu(map<int, list<int>> city){
+    
 }
 
 void display_all_data(map<int, list<int>> city){
