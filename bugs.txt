@@ -12,3 +12,6 @@ solution for all three cities.
 to appear (┬░F). Deleted the degrees symbol and just wrote out degrees. Did this for all
 displays
 
+5. If the user is attempting to check the weather for a specific day and it isn't valid, 
+Invalid Day will be displayed twice. Removed it from one of the functions since it isn't required
+twice.

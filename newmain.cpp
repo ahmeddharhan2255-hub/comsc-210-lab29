@@ -182,7 +182,7 @@ void display_all_data(map<int, list<int>> city){
         cout << "Day " << it->first << ": ";
 
         for(auto temp: it->second){
-            cout << temp << "°F ";
+            cout << temp << " degrees F ";
         }
         cout << endl;
         cout << endl;
@@ -229,7 +229,8 @@ void find_avg_avg(map<int, list<int>> city){
         sum += *next(temp,2);
     }
     cout << "Average of Average Temps: ";
-    cout << sum / SIZE << "degrees F " << endl;
+    cout << sum / SIZE << " degrees F " << endl;
+    cout << endl;
 }
 
 void check_weather(map<int, list<int>> city, int day){
@@ -239,13 +240,10 @@ void check_weather(map<int, list<int>> city, int day){
     if(it != city.end()){
 
         for(auto temp: it->second){
-            cout << temp << "°F";
+            cout << temp << " degrees F ";
         }
     }
 
-    else{
-        cout << "Invalid Day!" << endl;
-    }
 }
 
 void recommendation(map<int, list<int>> city, int day){
