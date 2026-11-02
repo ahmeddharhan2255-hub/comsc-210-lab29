@@ -80,6 +80,13 @@ int main(){
                 if (city_choice == 1){
                     cout << "What Day(1-34)?" << endl;
                     cin >> day;
+
+                    if(day < 1 || day > 34){
+                        cout << "Invalid Input" << endl;
+                        cin.clear();
+                        cin.ignore(10000, '\n');
+                        break;
+                    }
                     check_weather(city1, day);
                     recommendation(city1, day);
                     break; 
@@ -242,8 +249,11 @@ void check_weather(map<int, list<int>> city, int day){
         for(auto temp: it->second){
             cout << temp << " degrees F ";
         }
-    }
 
+    }
+    else{
+        cout << "Invalid Day! try again!" << endl;
+    }
 }
 
 void recommendation(map<int, list<int>> city, int day){

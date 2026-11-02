@@ -10,8 +10,11 @@ solution for all three cities.
 
 4. When trying to display the temperatures using the "°F" symbol, it caused this weird error
 to appear (┬░F). Deleted the degrees symbol and just wrote out degrees. Did this for all
-displays
+temperature displays.
 
 5. If the user is attempting to check the weather for a specific day and it isn't valid, 
 Invalid Day will be displayed twice. Removed it from one of the functions since it isn't required
 twice.
+
+6. Similar to issues 2 and 3, if the user inputs a character when trying to access a specific day,
+the program outputs the code an infinite number of times. 
