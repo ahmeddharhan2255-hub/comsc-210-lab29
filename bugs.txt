@@ -22,7 +22,7 @@ the program outputs the code an infinite number of times. Added an if statement 
 
 7. Ended up getting rid of the "degrees F" and just keeping "F". Was difficult to read.
 
-8.
+8. Moved case switches into one simple void function to avoid dense code and make code simpler.
 
 9.
 

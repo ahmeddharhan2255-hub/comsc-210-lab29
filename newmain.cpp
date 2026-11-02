@@ -79,6 +79,9 @@ int main(){
         else if(choice == 3){
             menu(city3);
         }
+        else if(choice == 4){
+            return 0;
+        }
         else{
             cout << "Your input was Invalid! Enter numbers shown on menu!" << endl;
             cin.clear();
@@ -86,120 +89,51 @@ int main(){
             break;
         }
 
-        switch(choice){
-            case 1:
-                cout << "What would you like to view" << endl;
-                cout << "1. Weather for a specific day" << endl;
-                cout << "2. All recorded temperatures in the past 34 days" << endl;
-                cout << "3. Average of all temp categories" << endl;
-                cin >> city_choice;
-
-                if (city_choice == 1){
-                    cout << "What Day(1-34)?" << endl;
-                    cin >> day;
-
-                    if(day < 1 || day > 34){
-                        cout << "Invalid Input" << endl;
-                        cin.clear();
-                        cin.ignore(10000, '\n');
-                        break;
-                    }
-                    check_weather(city1, day);
-                    recommendation(city1, day);
-                    break; 
-                }
-                else if (city_choice == 2){
-                    display_all_data(city1);
-                    break;
-                }
-                else if(city_choice == 3){
-                    find_high_avg(city1);
-                    find_low_avg(city1);
-                    find_avg_avg(city1);
-                    break;
-                }
-                else{
-                    cin.clear();
-                    cin.ignore(10000, '\n');
-                    break;
-                }
-
-            case 2:
-                cout << "What would you like to view" << endl;
-                cout << "1. Weather for a specific day" << endl;
-                cout << "2. All recorded temperatures in the past 34 days" << endl;
-                cout << "3. Average of all temp categories" << endl;
-                cin >> city_choice;
-
-                if (city_choice == 1){
-                    cout << "What Day(1-34)?" << endl;
-                    cin >> day;
-                    check_weather(city2, day);
-                    recommendation(city2, day);
-                    break; 
-                }
-                else if (city_choice == 2){
-                    display_all_data(city2);
-                    break;
-                }
-                else if(city_choice == 3){
-                    find_high_avg(city2);
-                    find_low_avg(city2);
-                    find_avg_avg(city2);
-                    break;
-                }
-                else{
-                    cin.clear();
-                    cin.ignore(10000, '\n');
-                    break;
-                }
-
-            case 3:
-                cout << "What would you like to view" << endl;
-                cout << "1. Weather for a specific day" << endl;
-                cout << "2. All recorded temperatures in the past 34 days" << endl;
-                cout << "3. Average of all temp categories" << endl;
-                cin >> city_choice;
-
-                if (city_choice == 1){
-                    cout << "What Day(1-34)?" << endl;
-                    cin >> day;
-                    check_weather(city3, day);
-                    recommendation(city3, day);
-                    break; 
-                }
-                else if (city_choice == 2){
-                    display_all_data(city3);
-                    break;
-                }
-                else if(city_choice == 3){
-                    find_high_avg(city3);
-                    find_low_avg(city3);
-                    find_avg_avg(city3);
-                    break;
-                }
-                else{
-                    cin.clear();
-                    cin.ignore(10000, '\n');
-                    break;
-                }
-
-            case 4:
-                return 0;
-            default:
-                cout << "Your input was Invalid! Enter numbers shown on menu!" << endl;
-
-                cin.clear();
-                cin.ignore(10000,'\n');
-                break;
-        }
     }
-    
+
     return 0;
+
 }
 
 void menu(map<int, list<int>> city){
-    
+    int city_choice;
+    int day;
+
+    cout << "What would you like to view" << endl;
+    cout << "1. Weather for a specific day" << endl;
+    cout << "2. All recorded temperatures in the past 34 days" << endl;
+    cout << "3. Average of all temp categories" << endl;
+    cin >> city_choice;
+
+    if (city_choice == 1){
+        cout << "What Day(1-34)?" << endl;
+        cin >> day;
+
+        if(day < 1 || day > 34){
+            cout << "Invalid Input" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            return;
+        }
+
+        check_weather(city, day);
+        recommendation(city, day);
+    }
+    else if (city_choice == 2){
+        display_all_data(city);
+        return;
+    }
+    else if(city_choice == 3){
+        find_high_avg(city);
+        find_low_avg(city);
+        find_avg_avg(city);
+        return;
+    }
+    else{
+        cin.clear();
+        cin.ignore(10000, '\n');
+        return;
+    }
 }
 
 void display_all_data(map<int, list<int>> city){
