@@ -1,0 +1,31 @@
+1. If user inputs any value other than what is shown on the menu,
+no output is given to the user. Add default output. 
+
+2. If user enters characters or sentence, menu screen is outputted an infinite amount of times. 
+Fixed this by using cin.clear() and cin.ignore(). Ignored 10000 because it is unknown how many
+charcters were inputted.
+
+3. Ran into the same issue as #2 when viewing the options for the selected city. Used the same
+solution for all three cities.
+
+4. When trying to display the temperatures using the "°F" symbol, it caused this weird error
+to appear (┬░F). Deleted the degrees symbol and just wrote out degrees. Did this for all
+temperature displays.
+
+5. If the user is attempting to check the weather for a specific day and it isn't valid, 
+Invalid Day will be displayed twice. Removed it from one of the functions since it isn't required
+twice.
+
+6. Similar to issues 2 and 3, if the user inputs a character when trying to access a specific day,
+the program outputs the code an infinite number of times. Added an if statement to check the day input
+(if below 1 or above 34) which rules out characters included
+
+7. Ended up getting rid of the "degrees F" and just keeping "F". Was difficult to read.
+
+8. Moved case switches into one simple void function to avoid dense code and make code simpler.
+
+9. When viewing a specific day, the output is all on one line. Fixed it by putting them onto separate
+lines.
+
+10. Removed break; from previous case switching code. If input was invalid, code would break so I 
+removed it.
