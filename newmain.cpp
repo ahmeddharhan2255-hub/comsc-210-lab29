@@ -95,6 +95,8 @@ int main(){
                     break;
                 }
                 else{
+                    cin.clear();
+                    cin.ignore(10000, '\n');
                     break;
                 }
 
@@ -123,6 +125,8 @@ int main(){
                     break;
                 }
                 else{
+                    cin.clear();
+                    cin.ignore(10000, '\n');
                     break;
                 }
 
@@ -151,6 +155,8 @@ int main(){
                     break;
                 }
                 else{
+                    cin.clear();
+                    cin.ignore(10000, '\n');
                     break;
                 }
 
@@ -158,6 +164,10 @@ int main(){
                 return 0;
             default:
                 cout << "Your input was Invalid! Enter numbers shown on menu!" << endl;
+
+                cin.clear();
+                cin.ignore(10000,'\n');
+                break;
         }
     }
     

@@ -1,4 +1,12 @@
 1. If user inputs any value other than what is shown on the menu,
-no output is given to the user. Add default output. Also, if user enters
-a character, menu screen is outputted an infinite amount of times
+no output is given to the user. Add default output. 
+
+2. If user enters characters or sentence, menu screen is outputted an infinite amount of times. 
+Fixed this by using cin.clear() and cin.ignore(). Ignored 10000 because it is unknown how many
+charcters were inputted.
+
+3. Ran into the same issue as #2 when viewing the options for the selected city. Used the same
+solution for all three cities.
+
+
 
