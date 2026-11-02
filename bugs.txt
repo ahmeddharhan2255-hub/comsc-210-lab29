@@ -27,4 +27,5 @@ the program outputs the code an infinite number of times. Added an if statement 
 9. When viewing a specific day, the output is all on one line. Fixed it by putting them onto separate
 lines.
 
-10.
+10. Removed break; from previous case switching code. If input was invalid, code would break so I 
+removed it.

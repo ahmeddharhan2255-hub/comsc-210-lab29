@@ -86,7 +86,6 @@ int main(){
             cout << "Your input was Invalid! Enter numbers shown on menu!" << endl;
             cin.clear();
             cin.ignore(10000,'\n');
-            break;
         }
 
     }
@@ -206,7 +205,7 @@ void check_weather(map<int, list<int>> city, int day){
         for(auto temp: it->second){
             cout << temp << "F ";
         }
-        
+
         cout << endl;
 
     }
