@@ -103,7 +103,9 @@ void menu(map<int, list<int>> city){
     cout << "1. Weather for a specific day" << endl;
     cout << "2. All recorded temperatures in the past 34 days" << endl;
     cout << "3. Average of all temp categories" << endl;
+    cout << endl;
     cin >> city_choice;
+    cout << endl;
 
     if (city_choice == 1){
         cout << "What Day(1-34)?" << endl;
@@ -204,8 +206,11 @@ void check_weather(map<int, list<int>> city, int day){
         for(auto temp: it->second){
             cout << temp << "F ";
         }
+        
+        cout << endl;
 
     }
+
     else{
         cout << "Invalid Day! try again!" << endl;
     }
