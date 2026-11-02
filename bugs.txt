@@ -1,0 +1,4 @@
+1. If user inputs any value other than what is shown on the menu,
+no output is given to the user. Add default output. Also, if user enters
+a character, menu screen is outputted an infinite amount of times
+

@@ -67,6 +67,7 @@ int main(){
         cout << "3. City3" << endl;
         cout << "4. Exit" << endl;
         cin >> choice;
+        cout << endl;
 
         switch(choice){
             case 1:
@@ -155,6 +156,8 @@ int main(){
 
             case 4:
                 return 0;
+            default:
+                cout << "Your input was Invalid! Enter numbers shown on menu!" << endl;
         }
     }
     
